@@ -16,7 +16,11 @@ import org.puremvc.haxe.multicore.utilities.undo.interfaces.IUndoableCommand;
  * <p>In order to record a command into the history, you must set the type of its notification
  * to [UndoableCommandTypeEnum.RECORDABLE_COMMAND]</p>
  */
+#if haxe3
+class CommandsHistoryProxy extends Proxy implements IProxy
+#else
 class CommandsHistoryProxy extends Proxy, implements IProxy
+#end
 {
 	/**
 	 * The name of the proxy.
@@ -83,10 +87,19 @@ class CommandsHistoryProxy extends Proxy, implements IProxy
 	 */
 	function getCanUndo() : Bool
 	{
+		return get_canUndo();
+	}
+	
+	function get_canUndo() : Bool
+	{
 		return undoStack.length > 0;
 	}
 	
-	public var canUndo( getCanUndo, null ) : Bool;
+	#if haxe3
+	public var canUndo( get, null ) : Bool;
+	#else
+	public var canUndo( get_canUndo, null ) : Bool;
+	#end
 
 	/**
 	 * Returns the REDO command 
@@ -112,10 +125,19 @@ class CommandsHistoryProxy extends Proxy, implements IProxy
 	 */
 	function getCanRedo() : Bool
 	{
+		return get_canRedo();
+	}
+	
+	function get_canRedo() : Bool
+	{
 		return redoStack.length > 0;
 	}
-
-	public var canRedo( getCanRedo, null ) : Bool;
+	
+	#if haxe3
+	public var canRedo( get, null ) : Bool;
+	#else
+	public var canRedo( get_canRedo, null ) : Bool;
+	#end
 	
 	/**
 	 * Saves a command into the history.

@@ -16,7 +16,11 @@ import org.puremvc.haxe.utilities.undo.enums.UndoableCommandTypeEnum;
  * UndoableMacroCommandBase gives you the posibility to create
  * a chain of simple commands instead of a single command.
  */
+#if haxe3
+class UndoableMacroCommandBase extends UndoableCommandBase implements INotifier implements ICommand implements IUndoableCommand
+#else
 class UndoableMacroCommandBase extends UndoableCommandBase, implements INotifier, implements ICommand, implements IUndoableCommand
+#end
 {
 	private var subCommands: List<Class<ICommand>>;
 
