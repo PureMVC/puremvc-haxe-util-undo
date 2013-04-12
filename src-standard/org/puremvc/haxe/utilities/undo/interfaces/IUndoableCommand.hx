@@ -9,7 +9,11 @@ import org.puremvc.haxe.interfaces.ICommand;
 import org.puremvc.haxe.interfaces.INotification;
 import org.puremvc.haxe.interfaces.INotifier;
 
+#if haxe3
+interface IUndoableCommand extends ICommand extends INotifier
+#else
 interface IUndoableCommand implements ICommand, implements INotifier
+#end
 {
 	function getNote() : INotification;
 	function undo() : Void;
