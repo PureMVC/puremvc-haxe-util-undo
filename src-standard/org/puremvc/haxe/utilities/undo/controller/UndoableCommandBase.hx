@@ -16,7 +16,11 @@ import org.puremvc.haxe.utilities.undo.enums.UndoableCommandTypeEnum;
  * The base class for any undoable command.
  * Any other classes that needs to be undo/redo enabled must extend it.
  */
+#if haxe3
+class UndoableCommandBase extends SimpleCommand implements IUndoableCommand
+#else
 class UndoableCommandBase extends SimpleCommand, implements IUndoableCommand
+#end
 {
 	/**
 	 * Holds a reference to note parameter, recieved from the [execute] method. 
