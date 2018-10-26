@@ -4,8 +4,8 @@ This utility adds undo / redo capability to your PureMVC Haxe application.
 * [Discussion](http://forums.puremvc.org/index.php?topic=888)
 
 ## API Docs
-* [Standard Version](http://darkstar.puremvc.org/content_header.html?url=http://puremvc.org/pages/docs/Haxe/Utility_Haxe_Undo/doc-standard/&desc=PureMVC%20Standard%20Docs%20Haxe%20Utility:%20Undo)
-* [MultiCore Version](http://darkstar.puremvc.org/content_header.html?url=http://puremvc.org/pages/docs/Haxe/Utility_Haxe_Undo/doc-multicore/&desc=PureMVC%20MultiCore%20Docs%20Haxe%20Utility:%20Undo)
+* [Standard Version](http://puremvc.org/pages/docs/Haxe/Utility_Haxe_Undo/doc-standard/)
+* [MultiCore Version](http://puremvc.org/pages/docs/Haxe/Utility_Haxe_Undo/doc-multicore/)
 
 ## Status
 Production - [Version 1.2](https://github.com/PureMVC/puremvc-haxe-util-undo/blob/master/VERSION)
